@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <ctype.h>
 #include "structure.h"
 #include "stack.h"
 #include "calculator.h"

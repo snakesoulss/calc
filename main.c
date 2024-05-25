@@ -5,6 +5,7 @@
 #include "structure.h"
 #include "stack.h"
 #include "calculator.h"
+#include <conio.h>
 #include <locale.h>
 
 int main() {

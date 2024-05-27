@@ -31,3 +31,24 @@
 	"structure.h"
 	"stack.h"
 
+1716638820 source:d:\stasy\calculator\calculate_notation.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<ctype.h>
+	"structure.h"
+	"stack.h"
+	"calculator.h"
+
+1716825122 source:d:\stasy\calculator\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"structure.h"
+	"stack.h"
+	"calculator.h"
+	<conio.h>
+	<locale.h>
+

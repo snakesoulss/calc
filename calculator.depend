@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1717503913 source:d:\stasy\calculator\calculate.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"structure.h"
+	"stack.h"
+	"calculator.h"
+
+1716574488 d:\stasy\calculator\structure.h
+
+1716574488 d:\stasy\calculator\stack.h
+
+1716574488 d:\stasy\calculator\calculator.h
+
+1717504025 source:d:\stasy\calculator\calculate_notation.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<ctype.h>
+	"structure.h"
+	"stack.h"
+	"calculator.h"
+
+1717503916 source:d:\stasy\calculator\is_operator.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"structure.h"
+	"stack.h"
+	"calculator.h"
+
+1717504035 source:d:\stasy\calculator\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"structure.h"
+	"stack.h"
+	"calculator.h"
+	<conio.h>
+	<locale.h>
+
+1717504035 source:d:\stasy\calculator\stack_operations.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"structure.h"
+	"stack.h"
+

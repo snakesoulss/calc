@@ -6,18 +6,21 @@
 #include "structure.h"
 #include "stack.h"
 #include "calculator.h"
-
-double evaluateRPN(char* expression)
-{
+double evaluateRPN(char *expression) {
     stack *s = stack_init();
-    char* token = strtok(expression, " ");
+    if (!s) {
+        printf("Ошибка: не удалось инициализировать стек\n");
+        return 1;
+    }
 
+    char *token = strtok(expression, " ");
     while (token != NULL) {
         if (isdigit(*token) || (strlen(token) > 1 && *token == '-' && isdigit(token[1]))) {
             push(s, atof(token)); // Преобразование строки в double и добавление числа в стек
         } else if (isOperator(*token)) {
             if (isEmpty(s) || s->top->next == NULL) {
                 printf("Ошибка: Недостаточно операндов для выполнения операции\n");
+                stack_free(s);
                 exit(EXIT_FAILURE);
             }
             double operand2 = pop(s);
@@ -30,6 +33,7 @@ double evaluateRPN(char* expression)
             push(s, M_E); // Добавление значения e в стек
         } else {
             printf("Ошибка: Неверный формат оператора или операнда\n");
+            stack_free(s);
             exit(EXIT_FAILURE);
         }
         token = strtok(NULL, " ");
@@ -37,6 +41,7 @@ double evaluateRPN(char* expression)
 
     if (isEmpty(s) || s->top->next != NULL) {
         printf("Ошибка: Недостаточно операций или лишние операнды\n");
+        stack_free(s);
         exit(EXIT_FAILURE);
     }
 

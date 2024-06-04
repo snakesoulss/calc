@@ -5,8 +5,7 @@
 #include "structure.h"
 #include "stack.h"
 
-stack *stack_init()
-{
+stack *stack_init() {
     stack *s = malloc(sizeof(*s));
     if (!s) {
         return NULL;
@@ -15,7 +14,6 @@ stack *stack_init()
     return s;
 }
 
-
 int isEmpty(stack *s) {
     return s->top == NULL;
 }
@@ -23,7 +21,7 @@ int isEmpty(stack *s) {
 void push(stack *s, double data) {
     node *newNode = malloc(sizeof(node));
     if (!newNode) {
-        printf("Error\n");
+        printf("Ошибка: не удалось выделить память для нового элемента стека\n");
         exit(EXIT_FAILURE);
     }
     newNode->data = data;
@@ -31,10 +29,9 @@ void push(stack *s, double data) {
     s->top = newNode;
 }
 
-
 double pop(stack *s) {
     if (isEmpty(s)) {
-        printf("Error: stack is empty\n");
+        printf("Ошибка: стек пуст\n");
         exit(EXIT_FAILURE);
     }
     node *temp = s->top;
@@ -43,7 +40,6 @@ double pop(stack *s) {
     free(temp);
     return data;
 }
-
 
 void stack_free(stack *s) {
     while (!isEmpty(s)) {

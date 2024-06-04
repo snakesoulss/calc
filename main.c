@@ -17,11 +17,16 @@ int main() {
     }
     printf("Введите выражение в обратной польской записи: ");
     fgets(expression, 100, stdin);
+
+    // Удаление символа новой строки, если он есть
+    size_t len = strlen(expression);
+    if (len > 0 && expression[len-1] == '\n') {
+        expression[len-1] = '\0';
+    }
+
     double result = evaluateRPN(expression);
     printf("Результат: %.2f\n", result);
     free(expression);
-    stack *s = stack_init();
-    stack_free(s);
-    _getch();
+
     return 0;
 }
